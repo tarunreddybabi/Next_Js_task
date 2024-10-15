@@ -11,6 +11,9 @@ const config: Config = {
       colors: {
         background: "var(--background)",
         foreground: "var(--foreground)",
+        textSoft: "#b7bac1",
+        bgSoft: "#182237",
+        lightBlack: "#2e374a",
       },
     },
   },
