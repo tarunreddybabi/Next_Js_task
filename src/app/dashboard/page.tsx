@@ -1,7 +1,4 @@
-import Card from "@/components/Card";
-import Chart from "@/components/Chart";
-import Rightbar from "@/components/Rightbar";
-import Transactions from "@/components/Transactions";
+import { Card, Chart, Rightbar, Transactions } from "@/components";
 
 export default function Dashboard() {
   return (

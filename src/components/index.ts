@@ -1,1 +1,10 @@
 export { default as Card } from "./Card";
+export { default as Chart } from "./Chart";
+export { default as Footer } from "./Footer";
+export { default as MenuLink } from "./MenuLink";
+export { default as Navbar } from "./Navbar";
+export { default as Rightbar } from "./Rightbar";
+export { default as Sidebar } from "./Sidebar";
+export { default as Transactions } from "./Transactions";
+export { default as Search } from "./Search";
+export { default as Pagination } from "./Pagination";

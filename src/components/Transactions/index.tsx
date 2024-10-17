@@ -1,5 +1,4 @@
 import Image from "next/image";
-import React from "react";
 
 export default function Transactions() {
   return (
@@ -29,10 +28,12 @@ export default function Transactions() {
               Tata
             </td>
             <td>
-              <span className="rounded-md p-1.5 text-sm text-white bg-[#f7cb7375]">Pending</span>
+              <span className="rounded-md p-1.5 text-sm text-white bg-[#f7cb7375]">
+                Pending
+              </span>
             </td>
             <td>14.10.2024</td>
-            <td>$4,800</td>
+            <td>₹4,800</td>
           </tr>
 
           <tr>
@@ -47,10 +48,12 @@ export default function Transactions() {
               Ratan
             </td>
             <td>
-            <span className="rounded-md p-1.5 text-sm text-white bg-[#f7737375]">Cancelled</span>
+              <span className="rounded-md p-1.5 text-sm text-white bg-[#f7737375]">
+                Cancelled
+              </span>
             </td>
             <td>14.10.2024</td>
-            <td>$4,800</td>
+            <td>₹4,800</td>
           </tr>
 
           <tr>
@@ -65,10 +68,12 @@ export default function Transactions() {
               Abdul
             </td>
             <td>
-            <span className="rounded-md p-1.5 text-sm text-white bg-[#f7cb7375]">Pending</span>
+              <span className="rounded-md p-1.5 text-sm text-white bg-[#f7cb7375]">
+                Pending
+              </span>
             </td>
             <td>14.10.2024</td>
-            <td>$4,800</td>
+            <td>₹4,800</td>
           </tr>
           <tr>
             <td className="flex gap-2.5 items-center">
@@ -82,10 +87,12 @@ export default function Transactions() {
               Kalam
             </td>
             <td>
-            <span className="rounded-md p-1.5 text-sm text-white bg-[#afd6ee75]">Done</span>
+              <span className="rounded-md p-1.5 text-sm text-white bg-[#afd6ee75]">
+                Done
+              </span>
             </td>
             <td>14.10.2024</td>
-            <td>$4,800</td>
+            <td>₹4,800</td>
           </tr>
         </tbody>
       </table>
