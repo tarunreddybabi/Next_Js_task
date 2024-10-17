@@ -8,6 +8,7 @@ const ProductsPage = async () => {
   try {
     products = await fetchProducts();
   } catch (error) {
+    console.log(error)
     return <div>Error fetching users.</div>;
   }
 

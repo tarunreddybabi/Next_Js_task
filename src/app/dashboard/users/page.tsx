@@ -8,6 +8,7 @@ const UsersPage = async () => {
   try {
     users = await fetchUsers();
   } catch (error) {
+    console.log(error)
     return <div>Error fetching users.</div>;
   }
 
