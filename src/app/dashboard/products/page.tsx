@@ -3,9 +3,24 @@ import { fetchProducts } from "@/lib/data";
 import Image from "next/image";
 import Link from "next/link";
 
-const ProductsPage = async ({ searchParams }: { searchParams: any }) => {
-  const q = searchParams?.q || "";
-  const page = parseInt(searchParams?.page || "1");
+interface SearchParams {
+  q?: string | string[];
+  page?: string | string[];
+}
+
+const ProductsPage = async ({
+  searchParams,
+}: {
+  searchParams: SearchParams;
+}) => {
+  const q = Array.isArray(searchParams?.q)
+    ? searchParams.q[0]
+    : searchParams?.q || "";
+  const page = parseInt(
+    Array.isArray(searchParams?.page)
+      ? searchParams.page[0]
+      : searchParams?.page || "1"
+  );
 
   try {
     const { count, products } = await fetchProducts(q, page);

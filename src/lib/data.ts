@@ -1,15 +1,7 @@
 import { Product, User } from "./models";
 import { ConnectToDB } from "./utils";
 
-interface FetchUsersResult {
-  count: number;
-  users: any[];
-}
-
-export const fetchUsers = async (
-  q: string,
-  page: number
-): Promise<FetchUsersResult> => {
+export const fetchUsers = async (q: string, page: number) => {
   const regex = new RegExp(q, "i");
   const Item_Per_Page = 2;
   try {

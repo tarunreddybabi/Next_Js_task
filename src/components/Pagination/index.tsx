@@ -15,9 +15,11 @@ export default function Pagination({ count }: { count: number }) {
   const hasNext = Item_Per_Page * (parseInt(page) - 1) + Item_Per_Page < count;
 
   const handleChangePage = (type: string) => {
-    type === "prev"
-      ? params.set("page", (parseInt(page) - 1).toString())
-      : params.set("page", (parseInt(page) + 1).toString());
+    if (type === "prev") {
+      params.set("page", (parseInt(page) - 1).toString());
+    } else {
+      params.set("page", (parseInt(page) + 1).toString());
+    }
     replace(`${pathname}?${params}`);
   };
   return (
