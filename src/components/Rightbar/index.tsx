@@ -3,7 +3,7 @@ import { MdPlayCircleFilled, MdReadMore } from "react-icons/md";
 
 export default function Rightbar () {
   return (
-    <div className="fixed">
+    <div >
       <div className="relative mb-5 rounded-lg bg-gradient-to-t from-[#182237] to-[#253352] p-5">
         <div className="absolute right-0 bottom-0 w-1/2 h-1/2">
           <Image className="object-contain opacity-20" src="/astronaut.png" alt="" fill />
