@@ -34,48 +34,48 @@ export default function Sidebar() {
           path: "/dashboard/products",
           icon: <MdShoppingBag />,
         },
-        {
-          title: "Transactions",
-          path: "/dashboard/transactions",
-          icon: <MdAttachMoney />,
-        },
+        // {
+        //   title: "Transactions",
+        //   path: "/dashboard/transactions",
+        //   icon: <MdAttachMoney />,
+        // },
       ],
     },
-    {
-      title: "Analytics",
-      list: [
-        {
-          title: "Revenue",
-          path: "/dashboard/revenue",
-          icon: <MdWork />,
-        },
-        {
-          title: "Reports",
-          path: "/dashboard/reports",
-          icon: <MdAnalytics />,
-        },
-        {
-          title: "Teams",
-          path: "/dashboard/teams",
-          icon: <MdPeople />,
-        },
-      ],
-    },
-    {
-      title: "User",
-      list: [
-        {
-          title: "Settings",
-          path: "/dashboard/settings",
-          icon: <MdOutlineSettings />,
-        },
-        {
-          title: "Help",
-          path: "/dashboard/help",
-          icon: <MdHelpCenter />,
-        },
-      ],
-    },
+    // {
+    //   title: "Analytics",
+    //   list: [
+    //     {
+    //       title: "Revenue",
+    //       path: "/dashboard/revenue",
+    //       icon: <MdWork />,
+    //     },
+    //     {
+    //       title: "Reports",
+    //       path: "/dashboard/reports",
+    //       icon: <MdAnalytics />,
+    //     },
+    //     {
+    //       title: "Teams",
+    //       path: "/dashboard/teams",
+    //       icon: <MdPeople />,
+    //     },
+    //   ],
+    // },
+    // {
+    //   title: "User",
+    //   list: [
+    //     {
+    //       title: "Settings",
+    //       path: "/dashboard/settings",
+    //       icon: <MdOutlineSettings />,
+    //     },
+    //     {
+    //       title: "Help",
+    //       path: "/dashboard/help",
+    //       icon: <MdHelpCenter />,
+    //     },
+    //   ],
+    // },
   ];
   return (
     <div className="sticky top-10">
@@ -88,7 +88,7 @@ export default function Sidebar() {
           height="50"
         />
         <div className="flex flex-col">
-          <span className="font-medium">John</span>
+          <span className="font-medium">User</span>
           <span className="text-xs text-textSoft">Administration</span>
         </div>
       </div>
@@ -104,9 +104,9 @@ export default function Sidebar() {
           </li>
         ))}
       </ul>
-      <button className="p-5 flex my-2.5 mx-0 items-center gap-2.5 hover:cursor-pointer rounded-lg border-none w-full	bg-none hover:bg-lightBlack">
+      {/* <button className="p-5 flex my-2.5 mx-0 items-center gap-2.5 hover:cursor-pointer rounded-lg border-none w-full	bg-none hover:bg-lightBlack">
         <MdLogout /> Logout
-      </button>
+      </button> */}
     </div>
   );
 }

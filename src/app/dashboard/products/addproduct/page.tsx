@@ -1,11 +1,13 @@
+import { addProduct } from "@/lib/actions";
+
 export default function AddProductPage() {
   return (
     <div className="bg-bgSoft p-5 rounded-lg mt-5">
-      <form action="" className="flex flex-wrap justify-between">
+      <form action={addProduct} className="flex flex-wrap justify-between">
         <input
           type="text"
           placeholder="title"
-          name=""
+          name="title"
           required
           className="p-8 w-5/12 bg-[#151c2c] text-white border-2 border-[#2e374a] rounded-md mb-8"
         />

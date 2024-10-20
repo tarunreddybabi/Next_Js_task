@@ -8,7 +8,7 @@ export default function Pagination({ count }: { count: number }) {
 
   const page = searchParams.get("page") || "1";
   const params = new URLSearchParams(searchParams);
-  const Item_Per_Page = 2;
+  const Item_Per_Page = 5;
 
   const hasPrev = Item_Per_Page * (parseInt(page) - 1) > 0;
 

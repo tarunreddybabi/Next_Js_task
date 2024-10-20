@@ -1,49 +1,59 @@
+import { updateProduct } from "@/lib/actions";
+import { fetchProduct } from "@/lib/data";
 import Image from "next/image";
 
-export default function SingleProductPage() {
+const SingleProductPage = async ({ params }: { params: { id: string } }) => {
+  const { id } = params;
+  const product = await fetchProduct(id);
   return (
     <div className="flex gap-12 mt-5">
       <div className="flex-[1] bg-bgSoft p-5 rounded-lg font-bold text-textSoft max-h-max">
         <div className="w-full h-72 relative rounded-lg overflow-hidden mb-5">
-          <Image src="/noavatar.png" alt="noavatar" fill />
+          <Image src={product.img || "/noavatar.png"} alt="noavatar" fill />
         </div>
-        Product name
+        {product.title}
       </div>
       <div className="flex-[3] bg-bgSoft p-5 rounded-lg">
-        <form className="flex flex-col">
+        <form action={updateProduct} className="flex flex-col">
+          <input type="hidden" name="id" value={product._id} />
           <label className="text-sm">Title</label>
           <input
             type="text"
-            placeholder="title"
+            // placeholder="title"
+            placeholder={product.title}
             name="title"
             className="p-5 border-2 border-lightBlack rounded-md bg-[#151c2c] text-white my-2"
           />
           <label className="text-sm">Price</label>
           <input
             type="number"
-            placeholder="price"
+            // placeholder="price"
             name="price"
+            placeholder={product.price}
             className="p-5 border-2 border-lightBlack rounded-md bg-[#151c2c] text-white my-2"
           />
           <label className="text-sm">Stock</label>
           <input
             type="number"
-            placeholder="Stock"
+            // placeholder="Stock"
             name="stock"
+            placeholder={product.stock}
             className="p-5 border-2 border-lightBlack rounded-md bg-[#151c2c] text-white my-2"
           />
           <label className="text-sm">Color</label>
           <input
             type="text"
-            placeholder="Color"
+            // placeholder="Color"
             name="color"
+            placeholder={product.color}
             className="p-5 border-2 border-lightBlack rounded-md bg-[#151c2c] text-white my-2"
           />
           <label className="text-sm">Size</label>
           <input
             type="text"
-            placeholder="Size"
+            // placeholder="Size"
             name="size"
+            placeholder={product.size}
             className="p-5 border-2 border-lightBlack rounded-md bg-[#151c2c] text-white my-2"
           />
           <label>Category</label>
@@ -61,7 +71,7 @@ export default function SingleProductPage() {
           <textarea
             name="desc"
             id="desc"
-            placeholder="description"
+            placeholder={product.desc}
             rows={8}
             className="w-full p-2 bg-[#151c2c] text-white border-2 border-lightBlack rounded-md mb-8 my-2"
           ></textarea>
@@ -75,4 +85,6 @@ export default function SingleProductPage() {
       </div>
     </div>
   );
-}
+};
+
+export default SingleProductPage;

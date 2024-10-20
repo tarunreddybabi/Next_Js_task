@@ -1,4 +1,5 @@
 import { Pagination, Search } from "@/components";
+import { deleteProduct } from "@/lib/actions";
 import { fetchProducts } from "@/lib/data";
 import Image from "next/image";
 import Link from "next/link";
@@ -59,7 +60,7 @@ const ProductsPage = async ({
                 <tr key={product._id}>
                   <td>
                     <Image
-                      src={product.img || "./noavatar.png"}
+                      src={product.img || "/noavatar.png"}
                       alt="Product image"
                       height={40}
                       width={40}
@@ -68,7 +69,7 @@ const ProductsPage = async ({
                   </td>
                   <td>{product.title}</td>
                   <td>{product.desc}</td>
-                  <td>${product.price.toFixed(2)}</td>
+                  <td>₹{" "}{product.price.toFixed(2)}</td>
                   <td>{new Date(product.createdAt).toLocaleDateString()}</td>
                   <td>{product.stock}</td>
                   <td>
@@ -78,9 +79,12 @@ const ProductsPage = async ({
                           View
                         </button>
                       </Link>
+                      <form action={deleteProduct}>
+                        <input type="hidden" name="id" value={product._id} />
                       <button className="py-1.5 px-2.5 rounded-md text-white border-none cursor-pointer bg-red-600">
                         Delete
                       </button>
+                      </form>
                     </div>
                   </td>
                 </tr>

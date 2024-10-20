@@ -1,22 +1,23 @@
 import { Pagination, Search } from "@/components";
+import { deleteUser } from "@/lib/actions";
 import { fetchUsers } from "@/lib/data";
 import Image from "next/image";
 import Link from "next/link";
-
 
 interface SearchParams {
   q?: string | string[];
   page?: string | string[];
 }
 
-const UsersPage = async ({
-  searchParams,
-}: {
-  searchParams: SearchParams;
-}) => {
-
-  const q = Array.isArray(searchParams?.q) ? searchParams.q[0] : searchParams?.q || "";
-  const page = parseInt(Array.isArray(searchParams?.page) ? searchParams.page[0] : searchParams?.page || "1");
+const UsersPage = async ({ searchParams }: { searchParams: SearchParams }) => {
+  const q = Array.isArray(searchParams?.q)
+    ? searchParams.q[0]
+    : searchParams?.q || "";
+  const page = parseInt(
+    Array.isArray(searchParams?.page)
+      ? searchParams.page[0]
+      : searchParams?.page || "1"
+  );
 
   try {
     const { count, users } = await fetchUsers(q, page);
@@ -55,7 +56,7 @@ const UsersPage = async ({
                   <td>
                     <div className="flex items-center gap-2.5">
                       <Image
-                        src={user.img || "./noproduct.jpg"}
+                        src={user.img || "/noproduct.jpg"}
                         alt="no image"
                         height={40}
                         width={40}
@@ -75,9 +76,12 @@ const UsersPage = async ({
                           View
                         </button>
                       </Link>
-                      <button className="py-1.5 px-2.5 rounded-md text-white border-none cursor-pointer bg-red-600">
-                        Delete
-                      </button>
+                      <form action={deleteUser}>
+                        <input type="hidden" name="id" value={user._id}/>
+                        <button className="py-1.5 px-2.5 rounded-md text-white border-none cursor-pointer bg-red-600">
+                          Delete
+                        </button>
+                      </form>
                     </div>
                   </td>
                 </tr>
