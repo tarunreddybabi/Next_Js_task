@@ -26,7 +26,7 @@ const UsersPage = async ({ searchParams }: { searchParams: SearchParams }) => {
       <div className="bg-bgSoft p-5 rounded-lg mt-5">
         <div className="flex items-center justify-between mb-5">
           <Search placeholder={"Search for a user"} />
-          <Link href="/dashboard/users/adduser">
+          <Link href="/users/adduser">
             <button className="p-2.5 bg-[#5d57c9] border-none rounded-md cursor-pointer text-white">
               Add New
             </button>
@@ -71,7 +71,7 @@ const UsersPage = async ({ searchParams }: { searchParams: SearchParams }) => {
                   <td>{user.isActive === "true" ? "Active" : "Passive"}</td>
                   <td>
                     <div className="flex gap-2.5">
-                      <Link href={`/dashboard/users/${user._id}`}>
+                      <Link href={`/users/${user._id}`}>
                         <button className="py-1.5 px-2.5 rounded-md text-white border-none cursor-pointer bg-teal-500">
                           View
                         </button>

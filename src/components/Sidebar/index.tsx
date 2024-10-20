@@ -1,5 +1,4 @@
 import {
-  MdDashboard,
   MdShoppingBag,
   MdSupervisedUserCircle,
 } from "react-icons/md";
@@ -12,19 +11,19 @@ export default function Sidebar() {
     {
       title: "Pages",
       list: [
-        {
-          title: "Dashboard",
-          path: "/dashboard",
-          icon: <MdDashboard />,
-        },
+        // {
+        //   title: "Dashboard",
+        //   path: "/dashboard",
+        //   icon: <MdDashboard />,
+        // },
         {
           title: "Users",
-          path: "/dashboard/users",
+          path: "/users",
           icon: <MdSupervisedUserCircle />,
         },
         {
           title: "Products",
-          path: "/dashboard/products",
+          path: "/products",
           icon: <MdShoppingBag />,
         },
         // {
@@ -82,7 +81,7 @@ export default function Sidebar() {
         />
         <div className="flex flex-col">
           <span className="font-medium">User</span>
-          <span className="text-xs text-textSoft">Administration</span>
+          <span className="text-sm text-textSoft">Administration</span>
         </div>
       </div>
       <ul className="">

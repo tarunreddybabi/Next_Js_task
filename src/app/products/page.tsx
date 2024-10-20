@@ -30,7 +30,7 @@ const ProductsPage = async ({
       <div className="bg-bgSoft p-5 rounded-lg mt-5">
         <div className="flex items-center justify-between mb-5">
           <Search placeholder={"Search for a product"} />
-          <Link href="/dashboard/products/addproduct">
+          <Link href="/products/addproduct">
             <button className="p-2.5 bg-[#5d57c9] border-none rounded-md cursor-pointer text-white">
               Add New
             </button>
@@ -74,7 +74,7 @@ const ProductsPage = async ({
                   <td>{product.stock}</td>
                   <td>
                     <div className="flex gap-2.5">
-                      <Link href={`/dashboard/products/${product._id}`}>
+                      <Link href={`/products/${product._id}`}>
                         <button className="py-1.5 px-2.5 rounded-md text-white border-none cursor-pointer bg-teal-500">
                           View
                         </button>
