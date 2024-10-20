@@ -1,14 +1,7 @@
 import {
-  MdAnalytics,
-  MdAttachMoney,
   MdDashboard,
-  MdHelpCenter,
-  MdLogout,
-  MdOutlineSettings,
-  MdPeople,
   MdShoppingBag,
   MdSupervisedUserCircle,
-  MdWork,
 } from "react-icons/md";
 
 import Image from "next/image";
