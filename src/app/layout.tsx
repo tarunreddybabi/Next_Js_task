@@ -15,7 +15,7 @@ const geistMono = localFont({
 });
 
 export const metadata: Metadata = {
-  title: "Admin Dashboard",
+  title: "Next js",
   description: "Next js Project",
 };
 
